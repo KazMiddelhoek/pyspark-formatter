@@ -1,0 +1,5 @@
+- id: pyspark-formatter
+  name: pyspark-formatter
+  entry: pyspark-formatter
+  language: python
+  types: [python]
