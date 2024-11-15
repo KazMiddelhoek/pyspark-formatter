@@ -26,3 +26,13 @@ becomes
 ```
 df.select("a", "b", f.col("c").alias("d"))
 ```
+
+## Unnecessary list usage in joins is removed.
+```
+df1.join(df2, ["join_column"], "inner")
+```
+becomes
+```
+df1.join(df2, "join_column", "inner")
+```
+
