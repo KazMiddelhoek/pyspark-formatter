@@ -26,11 +26,11 @@ def run(argv: Sequence[str] | None = None) -> int:
         with open(filename) as f:
             module = cst.parse_module(f.read())
 
-        formatted_module =module.visit(PysparkWindowTransformer())
+        formatted_module = module.visit(PysparkWindowTransformer())
 
         if formatted_module.deep_equals(module):
             continue
-        
+
         with open(filename, "w") as f:
             f.write(formatted_module.code)
         exit_code = 1

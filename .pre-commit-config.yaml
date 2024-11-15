@@ -1,0 +1,12 @@
+default_stages: [commit, push]
+repos: 
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [
+          --fix,
+          --config=lint.pydocstyle.convention = "google",
+          --ignore, "D100,D101,D102,D103,D104,D105,D106,D107,D202,D205"
+        ]
+      - id: ruff-format
