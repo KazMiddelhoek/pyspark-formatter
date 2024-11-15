@@ -34,7 +34,12 @@ def run(argv: Sequence[str] | None = None) -> int:
 
     for filename in args.filenames:
         with open(filename) as f:
-            module = cst.parse_module(f.read())
+            file_content = f.read()
+        
+        try:
+            module = cst.parse_module(file_content)
+        except:
+            print(f"Couldn't parse {filename}.")
 
         formatted_module = module
         for transformer in transformers:
