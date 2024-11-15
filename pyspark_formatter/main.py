@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 
 from pyspark_formatter.window_formatter import PysparkWindowTransformer
 from pyspark_formatter.join_formatter import JoinTransformer
-from pyspark_formatter.col_in_select_formatter import ColInSelectTransformer
+from pyspark_formatter.unnecessary_col_formatter import UncessecaryColTransformer
 
 
 def run(argv: Sequence[str] | None = None) -> int:
@@ -29,8 +29,8 @@ def run(argv: Sequence[str] | None = None) -> int:
     transformers = [
         PysparkWindowTransformer(),
         JoinTransformer(),
-        ColInSelectTransformer(),
-        ]
+        UncessecaryColTransformer(),
+    ]
 
     for filename in args.filenames:
         with open(filename) as f:
