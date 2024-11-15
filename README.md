@@ -10,7 +10,7 @@ To use this formatter, add it to your pre-commit-config:
 ```
   repos:
   - repo: https://github.com/KazMiddelhoek/pyspark-formatter
-    rev: ... 
+    rev: v0.0.1 
     hooks:
       - id: pyspark-formatter
 ```
