@@ -40,6 +40,7 @@ def run(argv: Sequence[str] | None = None) -> int:
             module = cst.parse_module(file_content)
         except:
             print(f"Couldn't parse {filename}.")
+            continue
 
         formatted_module = module
         for transformer in transformers:
