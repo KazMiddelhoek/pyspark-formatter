@@ -16,7 +16,7 @@ To use this formatter, add it to your pre-commit-config:
 # Implemented formatters
 Currently, the following formatting rules are implemented:
 
-## Unnecessary f.col() usage is removed.
+### Unnecessary f.col() usage is removed.
 ```
 import pyspark.sql.functions as f
 
@@ -27,11 +27,13 @@ becomes
 df.select("a", "b", f.col("c").alias("d"))
 ```
 
-## Unnecessary list usage in joins is removed.
+### Unnecessary list usage in joins and windows is removed.
 ```
 df1.join(df2, ["join_column"], "inner")
+w = Window.partitionBy(["a", "b"]).orderBy(["c"])
 ```
 becomes
 ```
 df1.join(df2, "join_column", "inner")
+w = Window.partitionBy("a", "b").orderBy("c")
 ```
