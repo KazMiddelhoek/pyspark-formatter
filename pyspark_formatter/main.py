@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import libcst as cst
 from collections.abc import Sequence
 from argparse import ArgumentParser
