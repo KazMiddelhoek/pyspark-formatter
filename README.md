@@ -1,6 +1,6 @@
 # pyspark-formatter
 Automatically format your pyspark code based on best practices. Generally, this comes down to keeping your code as simple 
-as possible by removing redundant function calls, list creation etc. Some rules are inspired by the [palantir style guide](https://github.com/palantir/pyspark-style-guide). This repo does currently does not use type checking to determine what to clean up, and may
+as possible by removing redundant function calls, list creation etc. Some rules are inspired by the [palantir style guide](https://github.com/palantir/pyspark-style-guide). This repo currently does not use type checking to determine what to clean up, and may
 therefore have some false positives. Feel free to report them!
 
 Under construction!
