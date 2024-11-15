@@ -16,14 +16,13 @@ To use this formatter, add it to your pre-commit-config:
 # Implemented formatters
 Currently, the following formatting rules are implemented:
 
+## Unnecessary f.col() usage is removed.
 ```
 import pyspark.sql.functions as f
 
-# Unnecessary f.col() usage is removed.
-
 df.select("a", f.col("b"), f.col("c").alias("d"))
-
-# becomes
-
+```
+becomes
+```
 df.select("a", "b", f.col("c").alias("d"))
 ```
