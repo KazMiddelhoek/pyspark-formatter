@@ -35,4 +35,3 @@ becomes
 ```
 df1.join(df2, "join_column", "inner")
 ```
-
